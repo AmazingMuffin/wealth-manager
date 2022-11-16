@@ -4,7 +4,7 @@
   Description : 
 
 */
-let { store, component } = reef;
+
 
 function footerTemplate() {
   var htmlString = '<div>';
