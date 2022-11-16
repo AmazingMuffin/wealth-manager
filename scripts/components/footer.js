@@ -4,15 +4,22 @@
   Description : 
 
 */
+let { store, component } = reef;
+let data = store({
+  dbName: '',
+});
 
+function template() {
+  let { dbName } = data;
 
-function footerTemplate() {
   var htmlString = '<div>';
-  htmlString += 'This is from the footer template';
+  htmlString += 'Connected to database : ';
   htmlString += '</div>';
-  return htmlString;
+  //return htmlString;
+  return 'xx ${dbName}';
 }
 
 function loadFooter() {
-  component('#footer', footerTemplate);
+  var res = loadDatabaseInfo();
+  component('#footer', template);
 }
